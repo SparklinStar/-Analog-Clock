@@ -45,10 +45,10 @@
       position: relative;
       padding: 2rem;
       box-shadow:
-        0 0 0 40px rgba(0, 0, 0, 0.1),
-        inset 0 0 0 3px #000000,
-        inset 0 0 20px black,
-        0 0 10px rgba(0, 0, 0, 0.2);
+        0 0 0 4px rgba(0,0,0,0.1),
+        inset 0 0 0 3px #EFEFEF,
+        inset 0 0 10px black,
+        0 0 10px rgba(0,0,0,0.2);
     }
 
     .clock-face {
@@ -75,7 +75,7 @@
     
 
   </style>
-
+<audio src="Lament Of The Ancients - Asher Fulero.mp3"></audio>
   <script>
     const secondhand=document.querySelector('.second-hand');
     const mindhand = document.querySelector('.min-hand');
@@ -98,7 +98,18 @@
       
     }
     setInterval(setdate,1000);
-   
+    const audio = document.querySelector("audio");
+  window.addEventListener("click", event => {
+    if (audio.paused) {
+    audio.volume = 0.2;
+    audio.play();
+    
+    
+  } else {
+    audio.pause();
+    
+  }
+});
 
   </script>
 </body>
